@@ -1,0 +1,28 @@
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+    <title>Node-2</title>
+    
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>   
+</head>
+<body>
+     <div id="root"/>
+
+
+    <script charset="utf-8" type="text/javascript">
+        const rootElement = document.getElementById("root");
+        
+        // params to createElement = element, props (children can be defined here as well), optional children
+        const element = React.createElement('div', 
+                                            { className: 'container', 
+                                              children: ["Goodbye World", "Hello"]}); 
+ 
+        
+        console.log(element)
+        ReactDOM.render(element, rootElement)
+
+    </script>
+</body>
+</html>
