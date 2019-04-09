@@ -6,22 +6,34 @@
     
     <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>   
+    <script crossorigin src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>   
 </head>
 <body>
      <div id="root"/>
 
 
-    <script charset="utf-8" type="text/javascript">
+    <script charset="utf-8" type="text/babel">
         const rootElement = document.getElementById("root");
         
         // params to createElement = element, props (children can be defined here as well), optional children
-        const element = React.createElement('div', 
+        /*const element = React.createElement('div', 
                                             { className: 'container', 
-                                              children: ["Goodbye World", "Hello"]}); 
- 
+                                              children: ["Goodbye World", "Hello"]});  */
+
+        const hello = "Hello World"
+        const element =  <div className="container">{ hello }</div> // {} is interpreted as JS, not JSX so you can do (() => hello)())
         
         console.log(element)
         ReactDOM.render(element, rootElement)
+        
+        /* ------------ */
+
+        const props = { className: 'container', 
+                        children: ["Goodbye World", "Hello"]}; 
+ 
+        const element2 = <div {...props}/> 
+        
+        ReactDOM.render(element2, rootElement) // render overwrites the previous render since it's same element
 
     </script>
 </body>
