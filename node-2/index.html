@@ -29,11 +29,20 @@
         /* ------------ */
 
         const props = { className: 'container', 
-                        children: ["Goodbye World", "Hello"]}; 
+                        children: ["Goodbye World", "Hello"]}; // props named children becomes children. Else part of definition of element
  
         const element2 = <div {...props}/> 
         
         ReactDOM.render(element2, rootElement) // render overwrites the previous render since it's same element
+
+        /* ---------- */
+        const message = (props) => <div>{props.msg}</div>
+
+        const element3 =  <div className="container">{ message({'msg': 'hello'}) }{message({'msg': 'goodbye'}) }</div> // {} is interpreted as JS, not JSX so you can do (() => hello)())
+        
+        console.log(element3)
+        ReactDOM.render(element3, rootElement)
+
 
     </script>
 </body>
