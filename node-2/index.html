@@ -42,6 +42,18 @@
         
         console.log(element3)
         ReactDOM.render(element3, rootElement)
+        
+        /* ---------- */
+        const Message = (props) => <div>{props.msg}</div>
+
+        const element4 =  (<div>
+                            <Message msg='hello'/> {/* Components HAVE to be capitalized. Else it's interpreted as strings */}
+                            <Message msg='goodbye'/>
+                          </div>)
+        
+        console.log(element4)
+        ReactDOM.render(element4, rootElement)
+
 
 
     </script>
